@@ -20,7 +20,7 @@ var DB = {
             id: 24,
             title: "Sea of thieves",
             year: 2018,
-            price: 50
+            price: 50 
         },
         {
             id: 25,
@@ -53,6 +53,18 @@ app.get("/game/:id", (req, res) =>{
     }
 })
 
+app.post("/game", (req, res) =>{
+    var {title, price, year}  =req.body
+
+    DB.games.push({
+        id:26,
+        title,
+        price,
+        year
+    })  
+
+    res.sendStatus(200)
+})
 app.post("/game", (req, res) =>{
     var {title, price, year}  =req.body
 
