@@ -65,18 +65,6 @@ app.post("/game", (req, res) =>{
 
     res.sendStatus(200)
 })
-app.post("/game", (req, res) =>{
-    var {title, price, year}  =req.body
-
-    DB.games.push({
-        id:26,
-        title,
-        price,
-        year
-    })  
-
-    res.sendStatus(200)
-})
 
 app.delete("/game/:id", (req, res)=>{
     if(isNaN(req.params.id)){
